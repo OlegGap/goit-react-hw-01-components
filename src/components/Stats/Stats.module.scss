@@ -1,0 +1,50 @@
+.statsSection {
+  height: 130px;
+  width: fit-content;
+  margin: 0 auto;
+  box-shadow: 1px 1.732px 2px rgba(2, 2, 2, 0.02);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  .title {
+    height: 70px;
+    line-height: 70px;
+    font-size: 16px;
+    letter-spacing: 0px;
+    color: #475965;
+    font-family: "Proxima Nova";
+    font-weight: bold;
+  }
+  .statsList {
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    .item {
+      width: 67px;
+      height: 60px;
+      // background: pink;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .label {
+        font-size: 12px;
+        letter-spacing: 0px;
+        line-height: 20px;
+        color: #ffffff;
+        font-family: "Proxima Nova";
+        font-weight: 300;
+      }
+      .percentage {
+        font-size: 18px;
+        letter-spacing: 0px;
+        line-height: 30px;
+        color: #ffffff;
+        font-family: "Proxima Nova";
+      }
+    }
+  }
+}
