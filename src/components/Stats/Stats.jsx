@@ -1,19 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Stats.module.scss';
+import backgrounColorsArray from '../db/statsBackgroundColor.json';
 
 const Stats = ({ title, stats }) => {
-  const backgrounItemColors = [
-    'a33cf2',
-    '21b8c6',
-    'e64c65',
-    '4fc4f6',
-    '80ff00',
-    '0080ff',
-    '8000ff',
-    'ff9999',
-    'ff6b00',
-  ];
+  const takeRandomBackgrounColor = allColorsArray => {
+    const randomColorIndex = Math.floor(Math.random() * allColorsArray.length);
+
+    return {
+      background: `#${allColorsArray[randomColorIndex]}`,
+    };
+  };
 
   return (
     <section className={styles.statsSection}>
@@ -21,15 +18,12 @@ const Stats = ({ title, stats }) => {
 
       <ul className={styles.statsList}>
         {stats.map(stat => {
-          const randomColorIndex = Math.floor(
-            Math.random() * backgrounItemColors.length,
-          );
-
-          const backgrounColor = {
-            background: `#${backgrounItemColors[randomColorIndex]}`,
-          };
           return (
-            <li className={styles.item} key={stat.id} style={backgrounColor}>
+            <li
+              className={styles.item}
+              key={stat.id}
+              style={takeRandomBackgrounColor(backgrounColorsArray)}
+            >
               <span className="label">{stat.label}</span>
               <span className="percentage">{`${stat.percentage}%`}</span>
             </li>
