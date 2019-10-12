@@ -1,17 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import takeRandomBackgrounColor from '../../utils/takeRandomBackgrounColor.js';
 import styles from './Stats.module.scss';
 import backgrounColorsArray from '../db/statsBackgroundColor.json';
 
 const Stats = ({ title, stats }) => {
-  const takeRandomBackgrounColor = allColorsArray => {
-    const randomColorIndex = Math.floor(Math.random() * allColorsArray.length);
-
-    return {
-      background: `#${allColorsArray[randomColorIndex]}`,
-    };
-  };
-
   return (
     <section className={styles.statsSection}>
       <h2 className={styles.title}>{title}</h2>
